@@ -1,27 +1,57 @@
-# Mazetv
+# Carlos Vázquez Ordóñez - MazeTv
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
+Proyecto de angular e ionic de gestión de TvMaze.
 
-## Development server
+## Prerrequisitos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Versiones mínimas
 
-## Code scaffolding
+- `Nodejs` version mínima necesaria `20.11.0`
+- `npm` version mínima necesaria `10.13.0`
+- `Angular` version mínima necesaria `17.0.10`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Información adicional en el package.json
 
-## Build
+### Instalar aplicación desde consola de comandos
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Clonar el proyecto a la ubicación deseada:
+`git clone https://github.com/cvogi/tvmaze.git`
 
-## Running unit tests
+Acceder al directorio de la aplicación e instalar las dependencias
+`npm install`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Lanzar aplicación
 
-## Running end-to-end tests
+Lanzar la aplicación desde la consola del proyecto
+`npm start`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Se podrá visualizar la aplicación desde el navegador (chrome recomendado) en la siguiente url [http://localhost:4200/](http://localhost:4200/) por defecto (o la que se indique por consola en caso de tener ocupado el puerto)
 
-## Further help
+Se podrá visualizar la aplicación en modo responsive desde las herramientas de desarrollo del navegador
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Ejemplo con Chrome:
+Pulsar `f12` para acceder a las herramientas o botón derecho en la pantalla `inspeccionar` -> aparecerá el panel de herramientas en el que se podrá pulsar en el segundo icono de la parte superior izquierda, para acceder a las opciones responsive.
+
+Cerrar aplicación desde la consola del proyecto
+`Ctrl + C`
+
+### Generar y visualizar tests
+
+Generar tests
+`npm test`
+
+Visualizar tests dentro de la raiz del proyecto
+`tvmaze/coverage/tvmaze/index.html`
+
+## Detalles de aquitectura
+
+- Se ha optado por usar una estructura de componentes standalone dada su alta reusabilidad.
+
+- Se ha ampliado el script `npm test` para que genere la cobertura de código y sus correspondientes ficheros locales para su cómoda interpretación.
+
+- Para el manejo de textos y futura posible implementación de multiidioma se usará desde el principio la librería standar @ngx-translate/core (dado que el sistema multiidioma nativo de angular está bastante obsoleto).
+
+## Autor
+
+Carlos Vázquez Ordóñez
+`carlos.vazquez2@soprasteria.com`
