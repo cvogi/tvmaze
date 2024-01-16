@@ -1,0 +1,19 @@
+.codere__header-top {
+    width: 100%;
+    background: var(--gradient-gray);
+    margin-bottom: 1rem;
+}
+
+.codere__header-top-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.codere__header-top,
+.header-top-container {
+    height: 100;
+    margin-top: 0.8rem;
+    margin-bottom: 0.5rem;
+}

@@ -1,3 +1,11 @@
-<p>
-  header works!
-</p>
+<header class="codere__header-top">
+  <div class="codere__header-top-container">
+    <a id="codere__header-link" class="codere__header-link" [routerLink]="['/dashboard']">
+      <img src="../../../../assets/images/header-logo.png" class="codere__logo"
+        alt="{{ 'COMMON.LOGO_ALT' | translate }}" />
+    </a>
+
+    <ion-searchbar (ionChange)="onSearchChange($event)"></ion-searchbar>
+
+  </div>
+</header>
