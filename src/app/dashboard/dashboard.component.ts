@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { SearchResultsComponent } from '../pages/search-results/search-results.component';
 
 @Component({
   selector: 'app-dashboard',

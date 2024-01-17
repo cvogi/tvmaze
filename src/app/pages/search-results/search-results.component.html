@@ -1,0 +1,5 @@
+<ion-content>
+    <ion-infinite-scroll direction="x">
+        <app-show-card *ngFor="let show of shows" [show]="show"></app-show-card>
+    </ion-infinite-scroll>
+</ion-content>
