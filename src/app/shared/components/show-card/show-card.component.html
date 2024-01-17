@@ -5,7 +5,7 @@
   </ion-card-header>
   <ion-card-content>
     <ion-img [src]="show.show.image.original"></ion-img>
-    <div *ngFor="let genre of show.show.genres">
+    <div *ngFor="let genre of show.show.genres" class="tag-container">
       <ion-chip>{{ genre }}</ion-chip>
     </div>
   </ion-card-content>
