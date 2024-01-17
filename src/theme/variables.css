@@ -245,12 +245,14 @@ html {
   --color-medium-green: #3c948b;
   --color-dark-green: #1f4b47;
   --color-medium-gray: #575757;
-  --color-dark-gray: #242424;
+  --color-dark-gray: #383838;
+  --color-darkest-gray: #242424;
+  --color-font-ligh-gray: #aaaaaa;
 
   /* Gradients */
   --gradient-gray: linear-gradient(
-    90deg,
+    180deg,
     var(--color-dark-gray) 0%,
-    var(--color-dark-gray) 100%
+    var(--color-darkest-gray) 100%
   );
 }
