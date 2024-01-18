@@ -1,5 +1,4 @@
-export interface Show {
-  genres?: string[];
+export interface ShowEntry {
   score: number;
   show: ShowData;
 }

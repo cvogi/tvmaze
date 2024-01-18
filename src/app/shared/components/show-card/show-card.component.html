@@ -1,13 +1,13 @@
 <ion-card>
   <ion-card-header>
-    <ion-card-subtitle>{{ show.show.rating.average ? show.show.rating.average : '?' }}</ion-card-subtitle>
-    <ion-card-title>{{ show.show.name }}</ion-card-title>
+    <ion-card-subtitle>{{ showData.rating.average ? showData.rating.average : '?' }}</ion-card-subtitle>
+    <ion-card-title>{{ showData.name }}</ion-card-title>
   </ion-card-header>
   <ion-card-content>
     <div class="image-container">
-      <ion-img [src]="show.show.image ? show.show.image.original : '../../../assets/images/no-image.jpg'"></ion-img>
+      <ion-img [src]="showData.image ? showData.image.original : '../../../assets/images/no-image.jpg'"></ion-img>
     </div>
-    <div *ngFor="let genre of show.show.genres" class="tag-container">
+    <div *ngFor="let genre of showData.genres" class="tag-container">
       <ion-chip>{{ genre }}</ion-chip>
     </div>
   </ion-card-content>

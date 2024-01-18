@@ -1,8 +1,8 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { IonContent, IonInfiniteScroll } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
-import { Show } from '../../../models/shows';
-import { ShowCardComponent } from '../../show-card/show-card.component';
+import { ShowData } from '../../models/shows';
+import { ShowCardComponent } from '../show-card/show-card.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterModule } from '@angular/router';
 
@@ -21,7 +21,7 @@ import { RouterModule } from '@angular/router';
   ],
 })
 export class ShowsSlideComponent {
-  @Input() shows!: Show[] | [];
+  @Input() showData!: ShowData[] | [];
   @ViewChild('scrollContainer', { read: ElementRef })
   scrollContainer!: ElementRef<any>;
   scrollInterval: any;

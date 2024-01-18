@@ -1,5 +1,5 @@
 import { Component, Input, NO_ERRORS_SCHEMA, OnInit } from '@angular/core';
-import { Show } from '../../models/shows';
+import { ShowData } from '../../models/shows';
 import {
   IonCard,
   IonCardContent,
@@ -30,7 +30,7 @@ import { CommonModule } from '@angular/common';
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
 export class ShowCardComponent implements OnInit {
-  @Input() show!: Show;
+  @Input() showData!: ShowData;
 
   constructor() {}
 

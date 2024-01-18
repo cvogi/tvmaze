@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Show } from '../../../shared/models/shows';
+import { ShowData, ShowEntry } from '../../../shared/models/shows';
 
 @Injectable({
   providedIn: 'root',
@@ -13,11 +13,11 @@ export class MazetvService {
 
   constructor(private http: HttpClient) {}
 
-  getShows(): Observable<Show[]> {
+  getShows(): Observable<ShowData[]> {
     return this.http.get<any>(`${this.apiUrl}${this.endpoints.getShows}`);
   }
 
-  searchShows(showName: string): Observable<Show[]> {
+  searchShows(showName: string): Observable<ShowEntry[]> {
     return this.http.get<any>(
       `${this.apiUrl}${this.endpoints.searchShows}${showName}`
     );
