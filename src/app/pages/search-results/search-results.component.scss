@@ -10,17 +10,38 @@ app-show-card {
 }
 
 @media (min-width: 768px) {
-
-  /* Ajusta esto según el breakpoint de tu diseño */
   ion-infinite-scroll {
     -ms-overflow-style: none;
-    /* IE and Edge */
     scrollbar-width: none;
-    /* Firefox */
   }
 
   ion-infinite-scroll::-webkit-scrollbar {
     display: none;
-    /* Chrome, Safari, Opera*/
   }
+}
+
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.scroll-button.left {
+  left: 10px;
+}
+
+.scroll-button.right {
+  right: 10px;
+}
+
+.scroll-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  display: flex;
+  overflow-x: auto;
 }

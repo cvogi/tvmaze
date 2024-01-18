@@ -14,6 +14,11 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, IonInfiniteScroll, ShowCardComponent, IonContent],
 })
 export class SearchResultsComponent implements OnInit {
+  //@ViewChild('scrollContainer') scrollContainer!: ElementRef;
+  //@ViewChild('scrollContainer', { static: false }) scrollContainer!: ElementRef;
+  @ViewChild('scrollContainer', { read: ElementRef })
+  public scrollContainer!: ElementRef<any>;
+
   shows: Show[] | [] = [];
   private subscription: Subscription;
 
@@ -29,5 +34,19 @@ export class SearchResultsComponent implements OnInit {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+
+  scrollLeft() {
+    this.scrollContainer.nativeElement.scrollBy({
+      left: -200,
+      behavior: 'smooth',
+    });
+  }
+
+  scrollRight() {
+    this.scrollContainer.nativeElement.scrollBy({
+      left: 200,
+      behavior: 'smooth',
+    });
   }
 }

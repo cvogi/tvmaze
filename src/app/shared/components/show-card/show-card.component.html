@@ -1,6 +1,6 @@
 <ion-card>
   <ion-card-header>
-    <ion-card-subtitle *ngIf="show.show.rating.average">{{ show.show.rating.average }}</ion-card-subtitle>
+    <ion-card-subtitle>{{ show.show.rating.average ? show.show.rating.average : '?' }}</ion-card-subtitle>
     <ion-card-title>{{ show.show.name }}</ion-card-title>
   </ion-card-header>
   <ion-card-content>
