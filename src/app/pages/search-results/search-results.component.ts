@@ -14,8 +14,6 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, IonInfiniteScroll, ShowCardComponent, IonContent],
 })
 export class SearchResultsComponent implements OnInit {
-  //@ViewChild('scrollContainer') scrollContainer!: ElementRef;
-  //@ViewChild('scrollContainer', { static: false }) scrollContainer!: ElementRef;
   @ViewChild('scrollContainer', { read: ElementRef })
   public scrollContainer!: ElementRef<any>;
 
@@ -38,17 +36,17 @@ export class SearchResultsComponent implements OnInit {
   }
 
   startScrollingLeft() {
-    this.stopScrolling(); // Detiene cualquier desplazamiento anterior
+    this.stopScrolling();
     this.scrollInterval = setInterval(() => {
-      this.scrollContainer.nativeElement.scrollLeft -= 10; // Ajusta el valor según la velocidad deseada
-    }, 10); // Ajusta el intervalo para controlar la velocidad de desplazamiento
+      this.scrollContainer.nativeElement.scrollLeft -= 10;
+    }, 10);
   }
 
   startScrollingRight() {
-    this.stopScrolling(); // Detiene cualquier desplazamiento anterior
+    this.stopScrolling();
     this.scrollInterval = setInterval(() => {
-      this.scrollContainer.nativeElement.scrollLeft += 10; // Ajusta el valor según la velocidad deseada
-    }, 10); // Ajusta el intervalo para controlar la velocidad de desplazamiento
+      this.scrollContainer.nativeElement.scrollLeft += 10;
+    }, 10);
   }
 
   stopScrolling() {
