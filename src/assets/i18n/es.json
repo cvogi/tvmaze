@@ -1,14 +1,15 @@
 {
-    "COMMON": {
-      "CANCEL": "Cancelar",
-      "CONTINUE": "Continuar"
-    },
-    "HEADER": {
-      "LOGO_ALT": "Maze TV"
-    },
-    "ERROR": {
-      "COMMON_ERROR": "Se ha producido un error.",
-      "NOT_AUTHORIZED": "No autorizado."
-    }
+  "COMMON": {
+    "CANCEL": "Cancelar",
+    "CONTINUE": "Continuar",
+    "NO_RESULTS": "No se han encontrado resultados.",
+    "GOTO_HOME": "Volver al inicio."
+  },
+  "HEADER": {
+    "LOGO_ALT": "Maze TV"
+  },
+  "ERROR": {
+    "COMMON_ERROR": "Se ha producido un error.",
+    "NOT_AUTHORIZED": "No autorizado."
   }
-  
+}

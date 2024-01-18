@@ -1,62 +1,16 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { Show } from '../../shared/models/shows';
-import { IonContent, IonInfiniteScroll } from '@ionic/angular/standalone';
-import { ShowCardComponent } from '../../shared/components/show-card/show-card.component';
-import { SharedDataService } from '../../core/services/shared-data/shared-data.service';
-import { Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ShowsSlideComponent } from '../../shared/components/shows-slide/shows-slide/shows-slide.component';
 
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
   styleUrls: ['./search-results.component.scss'],
   standalone: true,
-  imports: [CommonModule, IonInfiniteScroll, ShowCardComponent, IonContent],
+  imports: [CommonModule, ShowsSlideComponent],
 })
 export class SearchResultsComponent implements OnInit {
-  @ViewChild('scrollContainer', { read: ElementRef })
-  scrollContainer!: ElementRef<any>;
-  shows: Show[] | [] = [];
-  subscription: Subscription;
-  scrollInterval: any;
+  constructor() {}
 
-  constructor(private sharedDataService: SharedDataService) {
-    this.subscription = this.sharedDataService.searchResults$.subscribe(
-      (results) => {
-        this.shows = results;
-      }
-    );
-  }
-
-  ngOnInit() {
-    this.subscription = this.sharedDataService.searchResults$.subscribe(
-      (results) => {
-        this.shows = results;
-      }
-    );
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
-
-  startScrollingLeft() {
-    this.stopScrolling();
-    this.scrollInterval = setInterval(() => {
-      this.scrollContainer.nativeElement.scrollLeft -= 10;
-    }, 10);
-  }
-
-  startScrollingRight() {
-    this.stopScrolling();
-    this.scrollInterval = setInterval(() => {
-      this.scrollContainer.nativeElement.scrollLeft += 10;
-    }, 10);
-  }
-
-  stopScrolling() {
-    if (this.scrollInterval) {
-      clearInterval(this.scrollInterval);
-    }
-  }
+  ngOnInit() {}
 }

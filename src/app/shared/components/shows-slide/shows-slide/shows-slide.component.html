@@ -1,0 +1,15 @@
+<button *ngIf="shows.length > 0" class="scroll-button left" (mousedown)="startScrollingLeft()"
+  (mouseup)="stopScrolling()" (mouseleave)="stopScrolling()">&#8678;</button>
+<ion-content>
+  <ion-infinite-scroll direction="x" #scrollContainer class="scroll-container">
+    <app-show-card *ngFor="let show of shows" [show]="show"></app-show-card>
+    <p *ngIf="shows.length === 0" class="no-results">
+      {{ 'COMMON.NO_RESULTS' | translate }}
+      <a routerLink="/dashboard">
+        {{ 'COMMON.GOTO_HOME' | translate }}
+      </a>
+    </p>
+  </ion-infinite-scroll>
+</ion-content>
+<button *ngIf="shows.length > 0" class="scroll-button right" (mousedown)="startScrollingRight()"
+  (mouseup)="stopScrolling()" (mouseleave)="stopScrolling()">&#8680;</button>
