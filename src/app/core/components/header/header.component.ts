@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
 
   onSearchChange(event: any) {
     if (event.detail.value !== '') {
-      this.mazetvService.getShow(event.detail.value).subscribe((res) => {
+      this.mazetvService.searchShows(event.detail.value).subscribe((res) => {
         this.sharedDataService.setSearchResults(res);
         this.router.navigate(['/search-results']);
       });

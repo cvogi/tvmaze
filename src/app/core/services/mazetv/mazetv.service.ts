@@ -13,9 +13,13 @@ export class MazetvService {
 
   constructor(private http: HttpClient) {}
 
-  getShow(showName: string): Observable<Show[]> {
+  getShows(): Observable<Show[]> {
+    return this.http.get<any>(`${this.apiUrl}${this.endpoints.getShows}`);
+  }
+
+  searchShows(showName: string): Observable<Show[]> {
     return this.http.get<any>(
-      `${this.apiUrl}${this.endpoints.getShow}${showName}`
+      `${this.apiUrl}${this.endpoints.searchShows}${showName}`
     );
   }
 }

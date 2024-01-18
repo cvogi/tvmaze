@@ -3,6 +3,6 @@ export const environment = {
   tvmazeApiUrl: 'https://api.tvmaze.com',
   tvmazeApiEndpoints: {
     getShows: '/shows',
-    getShow: '/search/shows?q=:',
+    searchShows: '/search/shows?q=:',
   },
 };
