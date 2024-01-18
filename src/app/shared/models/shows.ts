@@ -1,4 +1,5 @@
 export interface Show {
+  genres?: string[];
   score: number;
   show: ShowData;
 }

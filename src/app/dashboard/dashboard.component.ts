@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, RouterModule } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
 import { ShowsSlideComponent } from '../shared/components/shows-slide/shows-slide/shows-slide.component';
-import { Show } from '../shared/models/shows';
+import { Show, ShowData } from '../shared/models/shows';
 import { MazetvService } from '../core/services/mazetv/mazetv.service';
 
 @Component({
@@ -15,29 +15,37 @@ import { MazetvService } from '../core/services/mazetv/mazetv.service';
 })
 export class DashboardComponent {
   shows: Show[] = [];
-  uniqueGenres: Set<string> = new Set();
-  showsByGenre: { [key: string]: Show[] } = {};
+  uniqueGenres: string[] = [];
+  showsByGenre: { [genre: string]: Show[] } = {};
 
   constructor(
     private translateService: TranslateService,
-    private mazetvService: MazetvService,
-    private router: Router
+    private mazetvService: MazetvService
   ) {
     this.mazetvService.getShows().subscribe((res: Show[] | []) => {
       this.shows = res;
-      this.manageGenres();
+      this.getGenres();
+      this.getShowsByGenre();
     });
   }
 
-  manageGenres() {
+  /**
+   * MazeTv api dont has filters by genre so we filter it manually
+   */
+  getGenres() {
     this.shows.forEach((show) => {
-      show.show.genres.forEach((genre) => {
-        this.uniqueGenres.add(genre);
+      show.genres?.forEach((genre) => {
+        if (!this.uniqueGenres.includes(genre)) {
+          this.uniqueGenres.push(genre);
+        }
       });
     });
+  }
+
+  getShowsByGenre() {
     this.uniqueGenres.forEach((genre) => {
       this.showsByGenre[genre] = this.shows.filter((show) =>
-        show.show.genres.includes(genre)
+        show.genres?.includes(genre)
       );
     });
   }
