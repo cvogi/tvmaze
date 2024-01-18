@@ -1,8 +1,6 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { IonContent, IonInfiniteScroll } from '@ionic/angular/standalone';
-import { Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { SharedDataService } from '../../../../core/services/shared-data/shared-data.service';
 import { Show } from '../../../models/shows';
 import { ShowCardComponent } from '../../show-card/show-card.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -23,25 +21,12 @@ import { RouterModule } from '@angular/router';
   ],
 })
 export class ShowsSlideComponent {
+  @Input() shows!: Show[] | [];
   @ViewChild('scrollContainer', { read: ElementRef })
   scrollContainer!: ElementRef<any>;
-  shows: Show[] | [] = [];
-  subscription: Subscription;
   scrollInterval: any;
 
-  searchResults$ = this.sharedDataService.searchResults$;
-
-  constructor(private sharedDataService: SharedDataService) {
-    this.subscription = this.sharedDataService.searchResults$.subscribe(
-      (results) => {
-        this.shows = results;
-      }
-    );
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
+  constructor() {}
 
   startScrollingLeft() {
     this.stopScrolling();
