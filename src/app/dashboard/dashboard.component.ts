@@ -14,16 +14,31 @@ import { MazetvService } from '../core/services/mazetv/mazetv.service';
   imports: [CommonModule, RouterModule, TranslateModule, ShowsSlideComponent],
 })
 export class DashboardComponent {
-  shows: ShowData[] = [];
+  showData: ShowData[] = [];
   uniqueGenres: string[] = [];
-  showsByGenre: { [genre: string]: ShowData[] } = {};
+  showsByGenre: { [genre: string]: { showList: ShowData[] } } = {};
+  showwFiltered = false;
 
   constructor(
     private translateService: TranslateService,
     private mazetvService: MazetvService
   ) {
     this.mazetvService.getShows().subscribe((res: ShowData[] | []) => {
-      this.shows = res;
+      this.showData = res;
+      this.groupShowsByGenre();
+      this.showwFiltered = true;
+    });
+  }
+
+  groupShowsByGenre(): void {
+    this.showData.forEach((show) => {
+      show.genres.forEach((genre) => {
+        if (!this.showsByGenre[genre]) {
+          this.showsByGenre[genre] = { showList: [] };
+          this.uniqueGenres.push(genre);
+        }
+        this.showsByGenre[genre].showList.push(show);
+      });
     });
   }
 }

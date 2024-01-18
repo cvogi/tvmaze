@@ -1,4 +1,6 @@
-<!-- <div *ngFor="let genre of uniqueGenres">
-  <h2>{{ genre }}</h2>
-  <app-shows-slide [shows]="showsByGenre[genre]"></app-shows-slide>
-</div> -->
+<div *ngIf="showwFiltered">
+  <div *ngFor="let genre of uniqueGenres">
+    <h2>{{ genre }}</h2>
+    <app-shows-slide [showData]="showsByGenre[genre].showList"></app-shows-slide>
+  </div>
+</div>
