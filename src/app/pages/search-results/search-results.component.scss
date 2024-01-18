@@ -9,19 +9,9 @@ app-show-card {
   flex: 0 0 auto;
 }
 
-@media (min-width: 768px) {
-  ion-infinite-scroll {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  ion-infinite-scroll::-webkit-scrollbar {
-    display: none;
-  }
-}
-
 .scroll-button {
   position: absolute;
+  z-index: 1000;
   top: 50%;
   transform: translateY(-50%);
   background-color: #f0f0f0;
@@ -44,4 +34,23 @@ app-show-card {
   white-space: nowrap;
   display: flex;
   overflow-x: auto;
+}
+
+// Only for desktop and tablets
+@media (min-width: 768px) {
+  ion-infinite-scroll {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  ion-infinite-scroll::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// Only for mobile
+@media (max-width: 767px) {
+  .scroll-button {
+    display: none;
+  }
 }

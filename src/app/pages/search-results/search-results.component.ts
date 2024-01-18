@@ -21,6 +21,7 @@ export class SearchResultsComponent implements OnInit {
 
   shows: Show[] | [] = [];
   private subscription: Subscription;
+  private scrollInterval: any;
 
   constructor(private sharedDataService: SharedDataService) {
     this.subscription = this.sharedDataService.searchResults$.subscribe(
@@ -36,17 +37,23 @@ export class SearchResultsComponent implements OnInit {
     this.subscription.unsubscribe();
   }
 
-  scrollLeft() {
-    this.scrollContainer.nativeElement.scrollBy({
-      left: -200,
-      behavior: 'smooth',
-    });
+  startScrollingLeft() {
+    this.stopScrolling(); // Detiene cualquier desplazamiento anterior
+    this.scrollInterval = setInterval(() => {
+      this.scrollContainer.nativeElement.scrollLeft -= 10; // Ajusta el valor según la velocidad deseada
+    }, 10); // Ajusta el intervalo para controlar la velocidad de desplazamiento
   }
 
-  scrollRight() {
-    this.scrollContainer.nativeElement.scrollBy({
-      left: 200,
-      behavior: 'smooth',
-    });
+  startScrollingRight() {
+    this.stopScrolling(); // Detiene cualquier desplazamiento anterior
+    this.scrollInterval = setInterval(() => {
+      this.scrollContainer.nativeElement.scrollLeft += 10; // Ajusta el valor según la velocidad deseada
+    }, 10); // Ajusta el intervalo para controlar la velocidad de desplazamiento
+  }
+
+  stopScrolling() {
+    if (this.scrollInterval) {
+      clearInterval(this.scrollInterval);
+    }
   }
 }

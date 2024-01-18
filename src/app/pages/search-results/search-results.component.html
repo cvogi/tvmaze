@@ -1,7 +1,9 @@
+<button class="scroll-button left" (mousedown)="startScrollingLeft()" (mouseup)="stopScrolling()"
+    (mouseleave)="stopScrolling()">&#8678;</button>
 <ion-content>
-    <button class="scroll-button left" (click)="scrollLeft()" (mousedown)="scrollLeft()">&#8678;</button>
     <ion-infinite-scroll direction="x" #scrollContainer class="scroll-container">
         <app-show-card *ngFor="let show of shows" [show]="show"></app-show-card>
     </ion-infinite-scroll>
-    <button class="scroll-button right" (click)="scrollRight()" (mousedown)="scrollRight()">&#8680;</button>
 </ion-content>
+<button class="scroll-button right" (mousedown)="startScrollingRight()" (mouseup)="stopScrolling()"
+    (mouseleave)="stopScrolling()">&#8680;</button>
