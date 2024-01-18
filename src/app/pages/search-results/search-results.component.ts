@@ -15,11 +15,10 @@ import { CommonModule } from '@angular/common';
 })
 export class SearchResultsComponent implements OnInit {
   @ViewChild('scrollContainer', { read: ElementRef })
-  public scrollContainer!: ElementRef<any>;
-
+  scrollContainer!: ElementRef<any>;
   shows: Show[] | [] = [];
-  private subscription: Subscription;
-  private scrollInterval: any;
+  subscription: Subscription;
+  scrollInterval: any;
 
   constructor(private sharedDataService: SharedDataService) {
     this.subscription = this.sharedDataService.searchResults$.subscribe(
@@ -29,7 +28,13 @@ export class SearchResultsComponent implements OnInit {
     );
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.subscription = this.sharedDataService.searchResults$.subscribe(
+      (results) => {
+        this.shows = results;
+      }
+    );
+  }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();

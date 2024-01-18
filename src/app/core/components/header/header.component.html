@@ -5,7 +5,7 @@
         alt="{{ 'COMMON.LOGO_ALT' | translate }}" />
     </a>
 
-    <ion-searchbar mode="ios" (ionChange)="onSearchChange($event)"></ion-searchbar>
+    <ion-searchbar mode="ios" (ionChange)="onSearchChange($event)" (ionClear)="onClear()"></ion-searchbar>
 
   </div>
 </header>

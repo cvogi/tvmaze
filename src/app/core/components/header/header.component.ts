@@ -23,9 +23,17 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {}
 
   onSearchChange(event: any) {
-    this.mazetvService.getShow(event.detail.value).subscribe((res) => {
-      this.sharedDataService.setSearchResults(res);
-      this.router.navigate(['/search-results']);
-    });
+    if (event.detail.value !== '') {
+      this.mazetvService.getShow(event.detail.value).subscribe((res) => {
+        this.sharedDataService.setSearchResults(res);
+        this.router.navigate(['/search-results']);
+      });
+    } else {
+      this.router.navigate(['/dashboard']);
+    }
+  }
+
+  onClear() {
+    this.router.navigate(['/dashboard']);
   }
 }
