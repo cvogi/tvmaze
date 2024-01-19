@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { IonContent, IonInfiniteScroll } from '@ionic/angular/standalone';
+import { IonInfiniteScroll } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { ShowData } from '../../models/shows';
 import { ShowCardComponent } from '../show-card/show-card.component';
@@ -17,7 +17,6 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     IonInfiniteScroll,
     ShowCardComponent,
-    IonContent,
   ],
 })
 export class ShowsSlideComponent {

@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './core/components/header/header.component';
-import { IonApp } from '@ionic/angular/standalone';
+import { IonApp, IonContent } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +16,7 @@ import { IonApp } from '@ionic/angular/standalone';
     FooterComponent,
     RouterOutlet,
     IonApp,
+    IonContent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
