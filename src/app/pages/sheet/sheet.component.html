@@ -17,12 +17,14 @@
           </ion-chip>
         </div>
 
-        <p>Status: {{ showData.status }}</p>
-        <p>Average Runtime: {{ showData.averageRuntime }} minutes</p>
-        <p>Premiered: {{ showData.premiered }} - Ended: {{ showData.ended }}</p>
-        <p>Rating: {{ showData.rating.average }}</p>
-        <p>Schedule: {{ showData.schedule.days.join(', ') }} at {{ showData.schedule.time }}</p>
-        <p><a [href]="showData.officialSite" target="_blank">Official Site</a></p>
+        <p>{{ 'SHEET.STATUS' | translate }} {{ showData.status }}</p>
+        <p>{{ 'SHEET.AVERAGE_RUNTIME' | translate }} {{ showData.averageRuntime }} {{ 'SHEET.MINUTES' | translate }}</p>
+        <p>{{ 'SHEET.PREMIERED' | translate }} {{ showData.premiered }} - {{ 'SHEET.ENDED' | translate }} {{
+          showData.ended }}</p>
+        <p>{{ 'SHEET.RATING' | translate }} {{ showData.rating.average }}</p>
+        <p>{{ 'SHEET.SHEDULE' | translate }} {{ showData.schedule.days.join(', ') }} {{ 'SHEET.AT' | translate }} {{
+          showData.schedule.time }}</p>
+        <p><a [href]="showData.officialSite" target="_blank">{{ 'SHEET.OFICIAL_SITE' | translate }}</a></p>
 
         <div [innerHTML]="showData.summary"></div>
       </ion-card-content>

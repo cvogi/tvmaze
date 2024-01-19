@@ -16,5 +16,16 @@
   "ERROR": {
     "COMMON_ERROR": "An error has occurred.",
     "NOT_AUTHORIZED": "Not authorized"
+  },
+  "SHEET": {
+    "STATUS": "Status:",
+    "AVERAGE_RUNTIME": "Average Runtime:",
+    "PREMIERED": "Premiered:",
+    "RATING": "Rating:",
+    "SHEDULE": "Schedule:",
+    "OFICIAL_SITE": "Official Site",
+    "MINUTES": "minutes",
+    "ENDED": "Ended:",
+    "AT": "at"
   }
 }

@@ -1,4 +1,4 @@
-# Carlos Vázquez Ordóñez - MazeTv
+# Carlos Vázquez Ordóñez - MazeTv (¡¡¡incompleta!!!)
 
 Proyecto de angular e ionic de gestión de TvMaze.
 
@@ -50,6 +50,8 @@ Visualizar tests dentro de la raiz del proyecto
 - Se ha ampliado el script `npm test` para que genere la cobertura de código y sus correspondientes ficheros locales para su cómoda interpretación.
 
 - Para el manejo de textos y futura posible implementación de multiidioma se usará desde el principio la librería standar @ngx-translate/core (dado que el sistema multiidioma nativo de angular está bastante obsoleto).
+
+- TODO: Aplicación y documentación incompletas
 
 ## Autor
 
