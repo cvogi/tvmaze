@@ -1,3 +1,32 @@
-<p>
-  sheet works!
-</p>
+<div class="container">
+  <button class="go-home-btn" (click)="goHome()">{{ 'COMMON.GOTO_HOME_BTN' | translate}}</button>
+
+  <ion-card *ngIf="showData">
+    <ion-img [src]="showData.image.original"></ion-img>
+
+    <div class="card-details">
+      <ion-card-header>
+        <ion-card-subtitle>{{ showData.type }} - {{ showData.language }}</ion-card-subtitle>
+        <ion-card-title>{{ showData.name }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <div class="genres">
+          <ion-chip *ngFor="let genre of showData.genres">
+            {{ genre }}
+          </ion-chip>
+        </div>
+
+        <p>Status: {{ showData.status }}</p>
+        <p>Average Runtime: {{ showData.averageRuntime }} minutes</p>
+        <p>Premiered: {{ showData.premiered }} - Ended: {{ showData.ended }}</p>
+        <p>Rating: {{ showData.rating.average }}</p>
+        <p>Schedule: {{ showData.schedule.days.join(', ') }} at {{ showData.schedule.time }}</p>
+        <p><a [href]="showData.officialSite" target="_blank">Official Site</a></p>
+
+        <div [innerHTML]="showData.summary"></div>
+      </ion-card-content>
+    </div>
+  </ion-card>
+
+</div>

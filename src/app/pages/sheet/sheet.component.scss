@@ -1,0 +1,57 @@
+.container {
+    position: relative;
+}
+
+.go-home-btn {
+    position: fixed;
+    right: 2rem;
+    z-index: 1000;
+    height: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 10px;
+    background: var(--gradient-gray);
+    color: white;
+}
+
+ion-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+ion-img {
+    object-fit: cover;
+    width: auto;
+    height: 40rem;
+}
+
+@media (min-width: 768px) {
+    ion-card {
+        flex-direction: row;
+    }
+
+    .go-home-btn {
+        top: 10rem;
+    }
+
+    .card-details {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 767px) {
+    ion-img {
+        height: 20rem;
+        width: auto;
+    }
+
+    ion-card {
+        align-items: center;
+        text-align: center;
+    }
+
+    .go-home-btn {
+        bottom: 3rem;
+    }
+}

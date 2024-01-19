@@ -3,10 +3,15 @@
     "CANCEL": "Cancelar",
     "CONTINUE": "Continuar",
     "NO_RESULTS": "No se han encontrado resultados.",
-    "GOTO_HOME": "Volver al inicio."
+    "GOTO_HOME": "Volver al inicio.",
+    "GOTO_HOME_BTN": "Volver al inicio"
   },
   "HEADER": {
     "LOGO_ALT": "Maze TV"
+  },
+  "FOOTER": {
+    "AUTHOR": "Creado por Carlos Vázquez Ordóñez",
+    "LINK": "Linkedin"
   },
   "ERROR": {
     "COMMON_ERROR": "Se ha producido un error.",

@@ -1,0 +1,14 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: var(--gradient-gray);
+    color: var(--color-font-ligh-gray);
+    z-index: 1000;
+}
+
+.footer-container {
+    padding: 10px;
+    text-align: center;
+}

@@ -1,14 +1,20 @@
 {
-    "COMMON": {
-      "CANCEL": "Cancelar",
-      "CONTINUE": "Continuar"
-    },
-    "HEADER": {
-      "LOGO_ALT": "Maze TV"
-    },
-    "ERROR": {
-      "COMMON_ERROR": "Se ha producido un error.",
-      "NOT_AUTHORIZED": "No autorizado."
-    }
+  "COMMON": {
+    "CANCEL": "Cancel",
+    "CONTINUE": "Continue",
+    "NO_RESULTS": "No results found.",
+    "GOTO_HOME": "Go to home.",
+    "GOTO_HOME_BTN": "Go to home"
+  },
+  "HEADER": {
+    "LOGO_ALT": "Maze TV"
+  },
+  "FOOTER": {
+    "AUTHOR": "Created by: Carlos Vázquez Ordóñez",
+    "LINK": "Linkedin"
+  },
+  "ERROR": {
+    "COMMON_ERROR": "An error has occurred.",
+    "NOT_AUTHORIZED": "Not authorized"
   }
-  
+}

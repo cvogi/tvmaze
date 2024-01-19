@@ -1,4 +1,4 @@
-import { Component, Input, NO_ERRORS_SCHEMA, OnInit } from '@angular/core';
+import { Component, Input, NO_ERRORS_SCHEMA } from '@angular/core';
 import { ShowData } from '../../models/shows';
 import {
   IonCard,
@@ -11,6 +11,8 @@ import {
 } from '@ionic/angular/standalone';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SharedDataService } from '../../../core/services/shared-data/shared-data.service';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-show-card',
@@ -19,6 +21,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [
     CommonModule,
+    RouterModule,
     IonContent,
     IonCard,
     IonCardHeader,
@@ -29,10 +32,16 @@ import { CommonModule } from '@angular/common';
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
 })
-export class ShowCardComponent implements OnInit {
+export class ShowCardComponent {
   @Input() showData!: ShowData;
 
-  constructor() {}
+  constructor(
+    private router: Router,
+    private sharedDataService: SharedDataService
+  ) {}
 
-  ngOnInit() {}
+  goToSheet(showData: ShowData) {
+    this.sharedDataService.setSheetData(showData);
+    this.router.navigate(['/sheet']);
+  }
 }

@@ -9,13 +9,16 @@ export class SharedDataService {
   private searchResultsSubject = new BehaviorSubject<ShowData[] | []>([]);
   searchResults$ = this.searchResultsSubject.asObservable();
 
+  private setSheetDataSubject = new BehaviorSubject<ShowData | null>(null);
+  setSheetData$ = this.setSheetDataSubject.asObservable();
+
   constructor() {}
 
   setSearchResults(res: ShowData[]) {
     this.searchResultsSubject.next(res);
   }
 
-  clearSearchResults() {
-    this.searchResultsSubject.next([]);
+  setSheetData(res: ShowData) {
+    this.setSheetDataSubject.next(res);
   }
 }

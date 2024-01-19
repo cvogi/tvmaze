@@ -11,6 +11,18 @@ ion-card-subtitle {
     max-width: 100%;
 }
 
+ion-card {
+    background-color: var(--color-light-green);
+    cursor: pointer;
+}
+
+ion-chip {
+    display: block;
+    text-align: center;
+    background-color: var(--color-medium-green);
+    font-weight: 600;
+}
+
 .tag-container {
     text-align: center;
     display: inline;
@@ -31,6 +43,6 @@ ion-card-subtitle {
 }
 
 .card-content-ios {
-    min-height: 26rem;
-    max-height: 26rem;
+    min-height: 25rem;
+    max-height: 25rem;
 }

@@ -1,4 +1,4 @@
-<ion-card>
+<ion-card (click)="goToSheet(showData)">
   <ion-card-header>
     <ion-card-subtitle>{{ showData.rating.average ? showData.rating.average : '?' }}</ion-card-subtitle>
     <ion-card-title>{{ showData.name }}</ion-card-title>
@@ -7,8 +7,7 @@
     <div class="image-container">
       <ion-img [src]="showData.image ? showData.image.original : '../../../assets/images/no-image.jpg'"></ion-img>
     </div>
-    <div *ngFor="let genre of showData.genres" class="tag-container">
-      <ion-chip>{{ genre }}</ion-chip>
-    </div>
+    <ion-chip>{{ showData.network && showData.network.name ? showData.network.name : '?' }}</ion-chip>
+    <ion-chip>{{ showData.network && showData.network.country.name ? showData.network.country.name : '?' }}</ion-chip>
   </ion-card-content>
 </ion-card>
